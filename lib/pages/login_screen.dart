@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:insighttrack/utils/color_constant.dart';
 import 'package:insighttrack/utils/image_constant.dart';
+import 'package:insighttrack/utils/size_utils.dart';
+import 'package:insighttrack/widgets/custom_form.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -23,16 +25,27 @@ class LoginScreen extends StatelessWidget {
                     height: MediaQuery.of(context).size.height*0.90,
                     decoration: BoxDecoration(color: ColorConstant.primary,borderRadius: const BorderRadius.only(topLeft: Radius.circular(12),bottomLeft: Radius.circular(12))),
                     child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        Image.asset(
-                          ImageConstant.imgLogo,
-                          width: MediaQuery.of(context).size.width*0.25,
-                          height: MediaQuery.of(context).size.width*0.10,
+                        Container(
+                          //color: Colors.pink,
+                          child: Image.asset(
+                            ImageConstant.imgLogo,
+                            width: MediaQuery.of(context).size.width*0.32,
+                            height: MediaQuery.of(context).size.height*0.20,
+                          ),
                         ),
-                        Image.asset(
-                          ImageConstant.imgLoginVector,
-                          width: MediaQuery.of(context).size.width*0.25,
-                          height: MediaQuery.of(context).size.width*0.30,
+                        //Container(color:Colors.white,width: getHorizontalSize(360),height: getVerticalSize(100)),
+                        Container(
+                          margin: getMargin(
+                            top: 40
+                          ),
+                          //color: Colors.brown,
+                          child: Image.asset(
+                            ImageConstant.imgLoginVector,
+                            width: MediaQuery.of(context).size.width*0.25,
+                            height: MediaQuery.of(context).size.height*0.55,
+                          ),
                         )
                       ],
                     ),
@@ -60,6 +73,7 @@ class LoginScreen extends StatelessWidget {
                     width: MediaQuery.of(context).size.width*0.40,
                     height: MediaQuery.of(context).size.height*0.90,
                     decoration: BoxDecoration(color: ColorConstant.customwhite,borderRadius: const BorderRadius.only(topRight: Radius.circular(12),bottomRight: Radius.circular(12))),
+                    child:CustomForm()
                   ),
                 ],
               ),
