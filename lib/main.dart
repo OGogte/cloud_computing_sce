@@ -1,8 +1,15 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:insighttrack/pages/login_screen.dart';
 
-void main() {
+void main() async{
   WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: const FirebaseOptions( apiKey: "AIzaSyBTd3z-M663ThxadkucKmvPwLRPAp4PDw8",
+        appId: "1:134678294959:web:66b028dbafaf5955a43f5a",
+        messagingSenderId: "134678294959",
+        projectId: "pw2-insight-track" )
+  );
   runApp(const MyApp());
 }
 
