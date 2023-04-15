@@ -123,14 +123,17 @@ class _CustomFormState extends State<CustomForm> {
             children:  [
               Padding(
                 padding: getPadding(right: 85,bottom: 45),
-                child: Text(
-                  "Forgot password?",
-                  textAlign: TextAlign.right,
-                  style: TextStyle(
-                    color: Color(0xff315034),
-                    fontSize: 13,
-                    fontFamily: "Poppins",
-                    fontWeight: FontWeight.w300,
+                child: GestureDetector(
+                  onTap: (){},
+                  child: Text(
+                    "Forgot password?",
+                    textAlign: TextAlign.right,
+                    style: TextStyle(
+                      color: Color(0xff315034),
+                      fontSize: 13,
+                      fontFamily: "Poppins",
+                      fontWeight: FontWeight.w300,
+                    ),
                   ),
                 ),
               )
