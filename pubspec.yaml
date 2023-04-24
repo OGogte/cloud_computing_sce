@@ -38,6 +38,9 @@ dependencies:
   bootstrap_icons: ^1.10.2
   firebase_core: ^2.9.0
   syncfusion_flutter_charts: ^21.1.38
+  http: ^0.13.5
+  gsheets: ^0.4.2
+  googleapis: ^8.1.0
 
 dev_dependencies:
   flutter_test:
