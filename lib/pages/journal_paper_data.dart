@@ -25,7 +25,7 @@ class _JournalPaperState extends State<JournalPaper> {
             print(snapshot.data!.t);
             return Text("Target of Journal ${snapshot.data!.t} & Journal Papers Achieved${snapshot.data!.a}");
           }
-          return const Text("Something went wromg !!!!");
+          return const Text("Something went wrong !!!!");
         },
 
       ),
