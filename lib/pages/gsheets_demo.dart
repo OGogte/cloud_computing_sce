@@ -167,7 +167,7 @@ void main() async {
     }*/
   Papers papers = await Papers().fetchJournalPaperData(7);
   print(Papers().fetchJournalPaperData(7));
-  print(papers);
+  print(papers.t);
   print(papers.type);
 
 }
