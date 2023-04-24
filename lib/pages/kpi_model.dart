@@ -172,31 +172,99 @@ class Consultancy {
 }
 
 class Books {
-  int? t;
-  int? a;
+  late final int? _t;
+  late final int? _a;
+  late final String? _type;
 
-  Books({this.t, this.a});
+  Books({int? t, int? a, String? type}){
+    _t = t;
+    _a = a;
+    _type = type;
+  }
+
+  int? get t => _t;
+  int? get a => _a;
+  String? get type => _type;
+
+  Future<Books> fetchOrganizedWsFDPSTTPData(int? rowid) async {
+    Worksheet? sheet1 = await KPI().sheet;
+    WorksheetAsValues? sheet1Values = sheet1?.values;
+    List<String>? Count = await sheet1Values?.row(rowid!,fromColumn:29,length: 2,);
+    Books CountB = Books(t: int.tryParse(Count![0]),a: int.tryParse(Count[1]),type: "Count");
+    return CountB;
+  }
 }
 
 class BooksChapter {
-  int? t;
-  int? a;
+  late final int? _t;
+  late final int? _a;
+  late final String? _type;
 
-  BooksChapter({this.t, this.a});
+  BooksChapter({int? t, int? a, String? type}){
+    _t = t;
+    _a = a;
+    _type = type;
+  }
+
+  int? get t => _t;
+  int? get a => _a;
+  String? get type => _type;
+
+  Future<BooksChapter> fetchOrganizedWsFDPSTTPData(int? rowid) async {
+    Worksheet? sheet1 = await KPI().sheet;
+    WorksheetAsValues? sheet1Values = sheet1?.values;
+    List<String>? Chapters = await sheet1Values?.row(rowid!,fromColumn:31,length: 2,);
+    BooksChapter ChaptersB = BooksChapter(t: int.tryParse(Chapters![0]),a: int.tryParse(Chapters[1]),type: "Chapters");
+    return ChaptersB;
+  }
 }
 
 class ResearchInternMent {
-  int? t;
-  int? a;
+  late final int? _t;
+  late final int? _a;
+  late final String? _type;
 
-  ResearchInternMent({this.t, this.a});
+  ResearchInternMent({int? t, int? a, String? type}){
+    _t = t;
+    _a = a;
+    _type = type;
+  }
+
+  int? get t => _t;
+  int? get a => _a;
+  String? get type => _type;
+
+  Future<ResearchInternMent> fetchOrganizedWsFDPSTTPData(int? rowid) async {
+    Worksheet? sheet1 = await KPI().sheet;
+    WorksheetAsValues? sheet1Values = sheet1?.values;
+    List<String>? Result = await sheet1Values?.row(rowid!,fromColumn:39,length: 2,);
+    ResearchInternMent ResultRIM = ResearchInternMent(t: int.tryParse(Result![0]),a: int.tryParse(Result[1]),type: "Result");
+    return ResultRIM;
+  }
 }
 
 class CenterofExcellence {
-  int? t;
-  int? a;
+  late final int? _t;
+  late final int? _a;
+  late final String? _type;
 
-  CenterofExcellence({this.t, this.a});
+  CenterofExcellence({int? t, int? a, String? type}){
+    _t = t;
+    _a = a;
+    _type = type;
+  }
+
+  int? get t => _t;
+  int? get a => _a;
+  String? get type => _type;
+
+  Future<CenterofExcellence> fetchOrganizedWsFDPSTTPData(int? rowid) async {
+    Worksheet? sheet1 = await KPI().sheet;
+    WorksheetAsValues? sheet1Values = sheet1?.values;
+    List<String>? Performance = await sheet1Values?.row(rowid!,fromColumn:41,length: 2,);
+    CenterofExcellence PerformanceCOF = CenterofExcellence(t: int.tryParse(Performance![0]),a: int.tryParse(Performance[1]),type: "Performance");
+    return PerformanceCOF;
+  }
 }
 
 class IPR {
@@ -240,9 +308,39 @@ class IPR {
 }
 
 class WsFDPSTTP {
-  int? t;
-  int? a;
-  String? type;
+  late final int? _t;
+  late final int? _a;
+  late final String? _type;
 
-  WsFDPSTTP({this.t, this.a, this.type});
+  WsFDPSTTP({int? t, int? a, String? type}){
+    _t = t;
+    _a = a;
+    _type = type;
+  }
+
+  int? get t => _t;
+  int? get a => _a;
+  String? get type => _type;
+
+  Future<WsFDPSTTP> fetchOrganizedWsFDPSTTPData(int? rowid) async {
+    Worksheet? sheet1 = await KPI().sheet;
+    WorksheetAsValues? sheet1Values = sheet1?.values;
+    List<String>? organized = await sheet1Values?.row(rowid!,fromColumn:33,length: 2,);
+    WsFDPSTTP organizedWsFDPSTTP = WsFDPSTTP(t: int.tryParse(organized![0]),a: int.tryParse(organized[1]),type: "Organized");
+    return organizedWsFDPSTTP;
+  }
+  Future<WsFDPSTTP> fetchAttendedWsFDPSTTPData(int? rowid) async {
+    Worksheet? sheet1 = await KPI().sheet;
+    WorksheetAsValues? sheet1Values = sheet1?.values;
+    List<String>? attended = await sheet1Values?.row(rowid!,fromColumn:35,length: 2,);
+    WsFDPSTTP attendedWsFDPSTTP = WsFDPSTTP(t: int.tryParse(attended![0]),a: int.tryParse(attended[1]),type: "Attended");
+    return attendedWsFDPSTTP;
+  }
+  Future<WsFDPSTTP> fetchResourcePersonWsFDPSTTPData(int? rowid) async {
+    Worksheet? sheet1 = await KPI().sheet;
+    WorksheetAsValues? sheet1Values = sheet1?.values;
+    List<String>? resourcePerson = await sheet1Values?.row(rowid!,fromColumn:37,length: 2,);
+    WsFDPSTTP resourceWsFDPSTTP = WsFDPSTTP(t: int.tryParse(resourcePerson![0]),a: int.tryParse(resourcePerson[1]),type: "Resource Person");
+    return resourceWsFDPSTTP;
+  }
 }
