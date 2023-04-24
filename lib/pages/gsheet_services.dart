@@ -1,14 +1,8 @@
 import 'package:gsheets/gsheets.dart';
 
 class GsheetsAPI{
-  late final String? _spreadsheet;
-  late final String? _sheetName;
-  GsheetsAPI({String? spreadsheet,String? sheetName}){
-    _spreadsheet = spreadsheet;
-    _sheetName = sheetName;
-  }
-  String? get spreadsheet => _spreadsheet;
-  String? get sheetName => _sheetName;
+  final String? spreadsheet;
+  GsheetsAPI({this.spreadsheet});
   final _credentials = r'''
 {
   "type": "service_account",
@@ -24,11 +18,11 @@ class GsheetsAPI{
 }
 ''';
 
-  Future<Worksheet?> connectToSheets() async{
+  Future<Worksheet?> connectToSheets(String? sheetname) async{
     final gsheets = GSheets(_credentials);
     // fetch spreadsheet by its id
-    final ss = await gsheets.spreadsheet(_spreadsheet!);
-    var sheet =ss.worksheetByTitle(_sheetName!);
+    final ss = await gsheets.spreadsheet(spreadsheet!);
+    var sheet =ss.worksheetByTitle(sheetname!);
     return sheet;
   }
   /*Future<Worksheet?> getSheet(Spreadsheet ss,String? sheetName) async{

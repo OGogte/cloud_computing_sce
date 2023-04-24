@@ -1,3 +1,5 @@
+import 'package:insighttrack/pages/global_variables.dart';
+
 import 'gsheet_services.dart';
 import 'package:gsheets/gsheets.dart';
 
@@ -14,7 +16,6 @@ class KPI {
   List<WsFDPSTTP>? wsFDPSTTP;
   ResearchInternMent? researchInternMent;
   CenterofExcellence? centerOfExcellence;
-  String? sheetName;
 
   KPI(
       {this.papers,
@@ -27,10 +28,9 @@ class KPI {
       this.wsFDPSTTP,
       this.researchInternMent,
       this.centerOfExcellence,
-      this.sheetName
       });
   
-  Future<Worksheet?> sheet = GsheetsAPI(sheetName: "KPI_Research_Sheet").connectToSheets();
+  Future<Worksheet?> sheet = GsheetsAPI(spreadsheet: gv_spreadsheet).connectToSheets(gv_sheetname);
 }
 
 class Papers {
