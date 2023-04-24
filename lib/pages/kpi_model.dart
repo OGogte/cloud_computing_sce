@@ -30,7 +30,7 @@ class KPI {
       this.sheetName
       });
   
-  Future<Worksheet?> sheet = GsheetsAPI().connectToSheets();
+  Future<Worksheet?> sheet = GsheetsAPI(sheetName: "KPI_Research_Sheet").connectToSheets();
 }
 
 class Papers {
@@ -58,8 +58,8 @@ class Papers {
   Future<Papers> fetchConferencePaperData(int? rowid) async {
     Worksheet? sheet1 = await KPI().sheet;
     WorksheetAsValues? sheet1Values = sheet1?.values;
-    List<String>? journal = await sheet1Values?.row(rowid!,fromColumn:4,length: 2,);
-    Papers journalPaper = Papers(t: int.tryParse(journal![0]),a: int.tryParse(journal[1]),type: "Journal");
+    List<String>? conference = await sheet1Values?.row(rowid!,fromColumn:6,length: 2,);
+    Papers journalPaper = Papers(t: int.tryParse(conference![0]),a: int.tryParse(conference[1]),type: "Conference");
     return journalPaper;
   }
 
@@ -93,14 +93,26 @@ class FundedProject {
     _a =a;
     _type =type;
   }
+
+  int? get t => _t;
+  double? get a => _a;
+  String? get type => _type;
 }
 
 class Consultancy {
-  double? t;
-  int? a;
-  String? type;
+  late final double? _t;
+  late final double? _a;
+  late final String? _type;
 
-  Consultancy({this.t, this.a, this.type});
+  Consultancy({double? t, double? a, String? type})
+  {
+    _t =t;
+    _a =a;
+    _type =type;
+  }
+  double? get t => _t;
+  double? get a => _a;
+  String? get type => _type;
 }
 
 class Books {
