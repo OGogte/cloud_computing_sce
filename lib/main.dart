@@ -1,6 +1,9 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:insighttrack/pages/login_screen.dart';
+import 'package:insighttrack/pages/new_page.dart';
+import 'pages/journal_paper_data.dart';
+import 'student_model.dart';
 
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();
@@ -12,7 +15,7 @@ void main() async{
   );
   runApp(const MyApp());
 }
-
+StudentModel stud = StudentModel();
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
@@ -34,7 +37,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: const LoginScreen()
+      home: JournalPaper()
     );
   }
 }
