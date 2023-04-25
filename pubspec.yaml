@@ -42,6 +42,9 @@ dependencies:
   gsheets: ^0.4.2
   googleapis: ^8.1.0
   sidebarx: ^0.15.0
+  google_fonts: ^4.0.3
+  flip_card: ^0.7.0
+  flutter_animated_icons: ^1.0.1
 
 dev_dependencies:
   flutter_test:
