@@ -1,15 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:insighttrack/pages/SideBarX.dart';
 import 'package:insighttrack/utils/color_constant.dart';
 import 'package:insighttrack/utils/size_utils.dart';
 
 class CustomButton extends StatelessWidget {
-  final Function()? onTap;
-  const CustomButton({Key? key,required this.onTap}) : super(key: key);
+  const CustomButton({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: (){},
+      onTap: (){
+        Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>HomePage2()));
+      },
       child: Container(
         margin: getMargin(top: 20),
         width:getHorizontalSize(210),

@@ -1,13 +1,10 @@
+import 'package:flip_card/flip_card.dart';
 import 'package:flutter/material.dart';
-import 'package:insighttrack/pages/card_kpi.dart';
+import 'package:flutter_animated_icons/icons8.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:insighttrack/utils/color_constant.dart';
 import 'package:insighttrack/utils/image_constant.dart';
 import 'package:insighttrack/utils/size_utils.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:flip_card/flip_card.dart';
-import 'package:flutter_animated_icons/icons8.dart';
-import 'package:flutter_animated_icons/lottiefiles.dart';
-import 'package:flutter_animated_icons/useanimations.dart';
 import 'package:lottie/lottie.dart';
 
 class HomePage3 extends StatefulWidget {
@@ -17,7 +14,7 @@ class HomePage3 extends StatefulWidget {
   State<HomePage3> createState() => _HomePage3State();
 }
 
-class _HomePage3State extends State<HomePage3> with TickerProviderStateMixin{
+class _HomePage3State extends State<HomePage3> with TickerProviderStateMixin {
   late AnimationController _bookController;
   late AnimationController _bookController1;
   late AnimationController _bookController2;
@@ -32,24 +29,36 @@ class _HomePage3State extends State<HomePage3> with TickerProviderStateMixin{
   late AnimationController _paper;
   late AnimationController _guestlecture;
   late AnimationController _clock;
+
   @override
   void initState() {
-    _bookController = AnimationController(vsync: this, duration: const Duration(seconds: 1));
-    _bookController1 = AnimationController(vsync: this, duration: const Duration(seconds: 1));
-    _bookController2 = AnimationController(vsync: this, duration: const Duration(seconds: 1));
-    _bookController3 = AnimationController(vsync: this, duration: const Duration(seconds: 1));
-    _bookController4 = AnimationController(vsync: this, duration: const Duration(seconds: 1));
-    _bookController5 = AnimationController(vsync: this, duration: const Duration(seconds: 1));
-    _bookController6 = AnimationController(vsync: this, duration: const Duration(seconds: 1));
-    _bookController7 = AnimationController(vsync: this, duration: const Duration(seconds: 1));
-    _bookController8 = AnimationController(vsync: this, duration: const Duration(seconds: 1));
-    _bookController9 = AnimationController(vsync: this, duration: const Duration(seconds: 1));
+    _bookController =
+        AnimationController(vsync: this, duration: const Duration(seconds: 1));
+    _bookController1 =
+        AnimationController(vsync: this, duration: const Duration(seconds: 1));
+    _bookController2 =
+        AnimationController(vsync: this, duration: const Duration(seconds: 1));
+    _bookController3 =
+        AnimationController(vsync: this, duration: const Duration(seconds: 1));
+    _bookController4 =
+        AnimationController(vsync: this, duration: const Duration(seconds: 1));
+    _bookController5 =
+        AnimationController(vsync: this, duration: const Duration(seconds: 1));
+    _bookController6 =
+        AnimationController(vsync: this, duration: const Duration(seconds: 1));
+    _bookController7 =
+        AnimationController(vsync: this, duration: const Duration(seconds: 1));
+    _bookController8 =
+        AnimationController(vsync: this, duration: const Duration(seconds: 1));
+    _bookController9 =
+        AnimationController(vsync: this, duration: const Duration(seconds: 1));
 
     _icon2 =
         AnimationController(vsync: this, duration: const Duration(seconds: 1));
     // TODO: implement initState
     super.initState();
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -57,75 +66,75 @@ class _HomePage3State extends State<HomePage3> with TickerProviderStateMixin{
         height: MediaQuery.of(context).size.height,
         width: MediaQuery.of(context).size.width,
         decoration: BoxDecoration(
-          image: DecorationImage(
-            image: AssetImage(ImageConstant.imgBackground),
-            fit:BoxFit.cover
-          )
-        ),
+            image: DecorationImage(
+                image: AssetImage(ImageConstant.imgBackground),
+                fit: BoxFit.cover)),
         child: Padding(
           padding: getPadding(all: 20),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text("Department Analysis",style: GoogleFonts.ooohBaby(fontWeight: FontWeight.bold,fontSize: 77),),
-              SizedBox(height: 40,),
+              Text(
+                "Department Analysis",
+                style: GoogleFonts.ooohBaby(
+                    fontWeight: FontWeight.bold, fontSize: 77),
+              ),
+              SizedBox(
+                height: 40,
+              ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   FlipCard(
                       front: Container(
-                        height: 70,
-                        width: 270,
-                        decoration: BoxDecoration(
-                            color: ColorConstant.bgDark,
-                            borderRadius: BorderRadius.circular(20),
-                            border: Border.all(
-                                color: Colors.black
-                            )
-                        ),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceAround,
-                          children: [
-                            MouseRegion(
-                              onEnter: (event) {
-                                _bookController.repeat();
-                              },
-                              onExit: (event) {
-                                _bookController.stop();
-                              },
-                              child: IconButton(
-                                splashRadius: 50,
-                                iconSize: 100,
-                                onPressed: () {
-                                  if (_bookController.status ==
-                                      AnimationStatus.dismissed) {
-                                    _bookController.reset();
-                                    _bookController.animateTo(1);
-                                  } else {
-                                    _bookController.reverse();
-                                  }
+                          height: 70,
+                          width: 270,
+                          decoration: BoxDecoration(
+                              color: ColorConstant.bgDark,
+                              borderRadius: BorderRadius.circular(20),
+                              border: Border.all(color: Colors.black)),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceAround,
+                            children: [
+                              MouseRegion(
+                                onEnter: (event) {
+                                  _bookController.repeat();
                                 },
-                                icon: Lottie.asset(Icons8.book,
-                                    controller: _bookController,
-                                    height: 60,
-                                    fit: BoxFit.fitHeight),
+                                onExit: (event) {
+                                  _bookController.stop();
+                                },
+                                child: IconButton(
+                                  splashRadius: 50,
+                                  iconSize: 100,
+                                  onPressed: () {
+                                    if (_bookController.status ==
+                                        AnimationStatus.dismissed) {
+                                      _bookController.reset();
+                                      _bookController.animateTo(1);
+                                    } else {
+                                      _bookController.reverse();
+                                    }
+                                  },
+                                  icon: Lottie.asset(Icons8.book,
+                                      controller: _bookController,
+                                      height: 60,
+                                      fit: BoxFit.fitHeight),
+                                ),
                               ),
-                            ),
-                            Text("Papers Published",textAlign: TextAlign.start,)
-                          ],
-                        )
-                      ),
+                              Text(
+                                "Papers Published",
+                                textAlign: TextAlign.start,
+                              )
+                            ],
+                          )),
                       back: Container(
                         height: 70,
                         width: 270,
                         decoration: BoxDecoration(
                             color: ColorConstant.bgDark,
                             borderRadius: BorderRadius.circular(20),
-                            border: Border.all(
-                                color: Colors.black
-                            )
-                        ),
+                            border: Border.all(color: Colors.black)),
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           crossAxisAlignment: CrossAxisAlignment.center,
@@ -134,15 +143,23 @@ class _HomePage3State extends State<HomePage3> with TickerProviderStateMixin{
                               mainAxisAlignment: MainAxisAlignment.center,
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
-                                Text("Journal Papers Published : ",style:TextStyle(fontSize: 15) ,),
-                                Text("30",style: TextStyle(fontSize: 15),)
+                                Text(
+                                  "Journal Papers Published : ",
+                                  style: TextStyle(fontSize: 15),
+                                ),
+                                Text(
+                                  "30",
+                                  style: TextStyle(fontSize: 15),
+                                )
                               ],
                             ),
-                            Chip(label: Text("In Progress"),backgroundColor: Colors.yellow,)
+                            Chip(
+                              label: Text("In Progress"),
+                              backgroundColor: Colors.yellow,
+                            )
                           ],
                         ),
-                      )
-                  ),
+                      )),
                   SizedBox(
                     width: 10,
                   ),
@@ -153,10 +170,7 @@ class _HomePage3State extends State<HomePage3> with TickerProviderStateMixin{
                           decoration: BoxDecoration(
                               color: ColorConstant.bgDark,
                               borderRadius: BorderRadius.circular(20),
-                              border: Border.all(
-                                  color: Colors.black
-                              )
-                          ),
+                              border: Border.all(color: Colors.black)),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceAround,
                             children: [
@@ -185,20 +199,19 @@ class _HomePage3State extends State<HomePage3> with TickerProviderStateMixin{
                                       fit: BoxFit.fitHeight),
                                 ),
                               ),
-                              Text("Papers Published",textAlign: TextAlign.start,)
+                              Text(
+                                "Papers Published",
+                                textAlign: TextAlign.start,
+                              )
                             ],
-                          )
-                      ),
+                          )),
                       back: Container(
                         height: 70,
                         width: 270,
                         decoration: BoxDecoration(
                             color: ColorConstant.bgDark,
                             borderRadius: BorderRadius.circular(20),
-                            border: Border.all(
-                                color: Colors.black
-                            )
-                        ),
+                            border: Border.all(color: Colors.black)),
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           crossAxisAlignment: CrossAxisAlignment.center,
@@ -207,15 +220,23 @@ class _HomePage3State extends State<HomePage3> with TickerProviderStateMixin{
                               mainAxisAlignment: MainAxisAlignment.center,
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
-                                Text("Journal Papers Published : ",style:TextStyle(fontSize: 15) ,),
-                                Text("30",style: TextStyle(fontSize: 15),)
+                                Text(
+                                  "Journal Papers Published : ",
+                                  style: TextStyle(fontSize: 15),
+                                ),
+                                Text(
+                                  "30",
+                                  style: TextStyle(fontSize: 15),
+                                )
                               ],
                             ),
-                            Chip(label: Text("In Progress"),backgroundColor: Colors.yellow,)
+                            Chip(
+                              label: Text("In Progress"),
+                              backgroundColor: Colors.yellow,
+                            )
                           ],
                         ),
-                      )
-                  ),
+                      )),
                   SizedBox(
                     width: 10,
                   ),
@@ -226,10 +247,7 @@ class _HomePage3State extends State<HomePage3> with TickerProviderStateMixin{
                           decoration: BoxDecoration(
                               color: ColorConstant.bgDark,
                               borderRadius: BorderRadius.circular(20),
-                              border: Border.all(
-                                  color: Colors.black
-                              )
-                          ),
+                              border: Border.all(color: Colors.black)),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceAround,
                             children: [
@@ -258,20 +276,19 @@ class _HomePage3State extends State<HomePage3> with TickerProviderStateMixin{
                                       fit: BoxFit.fitHeight),
                                 ),
                               ),
-                              Text("Papers Published",textAlign: TextAlign.start,)
+                              Text(
+                                "Papers Published",
+                                textAlign: TextAlign.start,
+                              )
                             ],
-                          )
-                      ),
+                          )),
                       back: Container(
                         height: 70,
                         width: 270,
                         decoration: BoxDecoration(
                             color: ColorConstant.bgDark,
                             borderRadius: BorderRadius.circular(20),
-                            border: Border.all(
-                                color: Colors.black
-                            )
-                        ),
+                            border: Border.all(color: Colors.black)),
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           crossAxisAlignment: CrossAxisAlignment.center,
@@ -280,18 +297,28 @@ class _HomePage3State extends State<HomePage3> with TickerProviderStateMixin{
                               mainAxisAlignment: MainAxisAlignment.center,
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
-                                Text("Journal Papers Published : ",style:TextStyle(fontSize: 15) ,),
-                                Text("30",style: TextStyle(fontSize: 15),)
+                                Text(
+                                  "Journal Papers Published : ",
+                                  style: TextStyle(fontSize: 15),
+                                ),
+                                Text(
+                                  "30",
+                                  style: TextStyle(fontSize: 15),
+                                )
                               ],
                             ),
-                            Chip(label: Text("In Progress"),backgroundColor: Colors.yellow,)
+                            Chip(
+                              label: Text("In Progress"),
+                              backgroundColor: Colors.yellow,
+                            )
                           ],
                         ),
-                      )
-                  ),
+                      )),
                 ],
               ),
-              SizedBox(height: 40,),
+              SizedBox(
+                height: 40,
+              ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
@@ -302,10 +329,7 @@ class _HomePage3State extends State<HomePage3> with TickerProviderStateMixin{
                           decoration: BoxDecoration(
                               color: ColorConstant.bgDark,
                               borderRadius: BorderRadius.circular(20),
-                              border: Border.all(
-                                  color: Colors.black
-                              )
-                          ),
+                              border: Border.all(color: Colors.black)),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceAround,
                             children: [
@@ -334,20 +358,19 @@ class _HomePage3State extends State<HomePage3> with TickerProviderStateMixin{
                                       fit: BoxFit.fitHeight),
                                 ),
                               ),
-                              Text("Papers Published",textAlign: TextAlign.start,)
+                              Text(
+                                "Papers Published",
+                                textAlign: TextAlign.start,
+                              )
                             ],
-                          )
-                      ),
+                          )),
                       back: Container(
                         height: 70,
                         width: 270,
                         decoration: BoxDecoration(
                             color: ColorConstant.bgDark,
                             borderRadius: BorderRadius.circular(20),
-                            border: Border.all(
-                                color: Colors.black
-                            )
-                        ),
+                            border: Border.all(color: Colors.black)),
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           crossAxisAlignment: CrossAxisAlignment.center,
@@ -356,15 +379,23 @@ class _HomePage3State extends State<HomePage3> with TickerProviderStateMixin{
                               mainAxisAlignment: MainAxisAlignment.center,
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
-                                Text("Journal Papers Published : ",style:TextStyle(fontSize: 15) ,),
-                                Text("30",style: TextStyle(fontSize: 15),)
+                                Text(
+                                  "Journal Papers Published : ",
+                                  style: TextStyle(fontSize: 15),
+                                ),
+                                Text(
+                                  "30",
+                                  style: TextStyle(fontSize: 15),
+                                )
                               ],
                             ),
-                            Chip(label: Text("In Progress"),backgroundColor: Colors.yellow,)
+                            Chip(
+                              label: Text("In Progress"),
+                              backgroundColor: Colors.yellow,
+                            )
                           ],
                         ),
-                      )
-                  ),
+                      )),
                   SizedBox(
                     width: 10,
                   ),
@@ -375,10 +406,7 @@ class _HomePage3State extends State<HomePage3> with TickerProviderStateMixin{
                           decoration: BoxDecoration(
                               color: ColorConstant.bgDark,
                               borderRadius: BorderRadius.circular(20),
-                              border: Border.all(
-                                  color: Colors.black
-                              )
-                          ),
+                              border: Border.all(color: Colors.black)),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceAround,
                             children: [
@@ -407,20 +435,19 @@ class _HomePage3State extends State<HomePage3> with TickerProviderStateMixin{
                                       fit: BoxFit.fitHeight),
                                 ),
                               ),
-                              Text("Papers Published",textAlign: TextAlign.start,)
+                              Text(
+                                "Papers Published",
+                                textAlign: TextAlign.start,
+                              )
                             ],
-                          )
-                      ),
+                          )),
                       back: Container(
                         height: 70,
                         width: 270,
                         decoration: BoxDecoration(
                             color: ColorConstant.bgDark,
                             borderRadius: BorderRadius.circular(20),
-                            border: Border.all(
-                                color: Colors.black
-                            )
-                        ),
+                            border: Border.all(color: Colors.black)),
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           crossAxisAlignment: CrossAxisAlignment.center,
@@ -429,15 +456,23 @@ class _HomePage3State extends State<HomePage3> with TickerProviderStateMixin{
                               mainAxisAlignment: MainAxisAlignment.center,
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
-                                Text("Journal Papers Published : ",style:TextStyle(fontSize: 15) ,),
-                                Text("30",style: TextStyle(fontSize: 15),)
+                                Text(
+                                  "Journal Papers Published : ",
+                                  style: TextStyle(fontSize: 15),
+                                ),
+                                Text(
+                                  "30",
+                                  style: TextStyle(fontSize: 15),
+                                )
                               ],
                             ),
-                            Chip(label: Text("In Progress"),backgroundColor: Colors.yellow,)
+                            Chip(
+                              label: Text("In Progress"),
+                              backgroundColor: Colors.yellow,
+                            )
                           ],
                         ),
-                      )
-                  ),
+                      )),
                   SizedBox(
                     width: 10,
                   ),
@@ -448,10 +483,7 @@ class _HomePage3State extends State<HomePage3> with TickerProviderStateMixin{
                           decoration: BoxDecoration(
                               color: ColorConstant.bgDark,
                               borderRadius: BorderRadius.circular(20),
-                              border: Border.all(
-                                  color: Colors.black
-                              )
-                          ),
+                              border: Border.all(color: Colors.black)),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceAround,
                             children: [
@@ -479,20 +511,19 @@ class _HomePage3State extends State<HomePage3> with TickerProviderStateMixin{
                                       fit: BoxFit.fitHeight),
                                 ),
                               ),
-                              Text("Papers Published",textAlign: TextAlign.start,)
+                              Text(
+                                "Papers Published",
+                                textAlign: TextAlign.start,
+                              )
                             ],
-                          )
-                      ),
+                          )),
                       back: Container(
                         height: 70,
                         width: 270,
                         decoration: BoxDecoration(
                             color: ColorConstant.bgDark,
                             borderRadius: BorderRadius.circular(20),
-                            border: Border.all(
-                                color: Colors.black
-                            )
-                        ),
+                            border: Border.all(color: Colors.black)),
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           crossAxisAlignment: CrossAxisAlignment.center,
@@ -501,18 +532,28 @@ class _HomePage3State extends State<HomePage3> with TickerProviderStateMixin{
                               mainAxisAlignment: MainAxisAlignment.center,
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
-                                Text("Journal Papers Published : ",style:TextStyle(fontSize: 15) ,),
-                                Text("30",style: TextStyle(fontSize: 15),)
+                                Text(
+                                  "Journal Papers Published : ",
+                                  style: TextStyle(fontSize: 15),
+                                ),
+                                Text(
+                                  "30",
+                                  style: TextStyle(fontSize: 15),
+                                )
                               ],
                             ),
-                            Chip(label: Text("In Progress"),backgroundColor: Colors.yellow,)
+                            Chip(
+                              label: Text("In Progress"),
+                              backgroundColor: Colors.yellow,
+                            )
                           ],
                         ),
-                      )
-                  ),
+                      )),
                 ],
               ),
-              SizedBox(height: 40,),
+              SizedBox(
+                height: 40,
+              ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
@@ -523,10 +564,7 @@ class _HomePage3State extends State<HomePage3> with TickerProviderStateMixin{
                           decoration: BoxDecoration(
                               color: ColorConstant.bgDark,
                               borderRadius: BorderRadius.circular(20),
-                              border: Border.all(
-                                  color: Colors.black
-                              )
-                          ),
+                              border: Border.all(color: Colors.black)),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceAround,
                             children: [
@@ -555,20 +593,19 @@ class _HomePage3State extends State<HomePage3> with TickerProviderStateMixin{
                                       fit: BoxFit.fitHeight),
                                 ),
                               ),
-                              Text("Papers Published",textAlign: TextAlign.start,)
+                              Text(
+                                "Papers Published",
+                                textAlign: TextAlign.start,
+                              )
                             ],
-                          )
-                      ),
+                          )),
                       back: Container(
                         height: 70,
                         width: 270,
                         decoration: BoxDecoration(
                             color: ColorConstant.bgDark,
                             borderRadius: BorderRadius.circular(20),
-                            border: Border.all(
-                                color: Colors.black
-                            )
-                        ),
+                            border: Border.all(color: Colors.black)),
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           crossAxisAlignment: CrossAxisAlignment.center,
@@ -577,15 +614,23 @@ class _HomePage3State extends State<HomePage3> with TickerProviderStateMixin{
                               mainAxisAlignment: MainAxisAlignment.center,
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
-                                Text("Journal Papers Published : ",style:TextStyle(fontSize: 15) ,),
-                                Text("30",style: TextStyle(fontSize: 15),)
+                                Text(
+                                  "Journal Papers Published : ",
+                                  style: TextStyle(fontSize: 15),
+                                ),
+                                Text(
+                                  "30",
+                                  style: TextStyle(fontSize: 15),
+                                )
                               ],
                             ),
-                            Chip(label: Text("In Progress"),backgroundColor: Colors.yellow,)
+                            Chip(
+                              label: Text("In Progress"),
+                              backgroundColor: Colors.yellow,
+                            )
                           ],
                         ),
-                      )
-                  ),
+                      )),
                   SizedBox(
                     width: 10,
                   ),
@@ -596,10 +641,7 @@ class _HomePage3State extends State<HomePage3> with TickerProviderStateMixin{
                           decoration: BoxDecoration(
                               color: ColorConstant.bgDark,
                               borderRadius: BorderRadius.circular(20),
-                              border: Border.all(
-                                  color: Colors.black
-                              )
-                          ),
+                              border: Border.all(color: Colors.black)),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceAround,
                             children: [
@@ -628,20 +670,19 @@ class _HomePage3State extends State<HomePage3> with TickerProviderStateMixin{
                                       fit: BoxFit.fitHeight),
                                 ),
                               ),
-                              Text("Papers Published",textAlign: TextAlign.start,)
+                              Text(
+                                "Papers Published",
+                                textAlign: TextAlign.start,
+                              )
                             ],
-                          )
-                      ),
+                          )),
                       back: Container(
                         height: 70,
                         width: 270,
                         decoration: BoxDecoration(
                             color: ColorConstant.bgDark,
                             borderRadius: BorderRadius.circular(20),
-                            border: Border.all(
-                                color: Colors.black
-                            )
-                        ),
+                            border: Border.all(color: Colors.black)),
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           crossAxisAlignment: CrossAxisAlignment.center,
@@ -650,15 +691,23 @@ class _HomePage3State extends State<HomePage3> with TickerProviderStateMixin{
                               mainAxisAlignment: MainAxisAlignment.center,
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
-                                Text("Journal Papers Published : ",style:TextStyle(fontSize: 15) ,),
-                                Text("30",style: TextStyle(fontSize: 15),)
+                                Text(
+                                  "Journal Papers Published : ",
+                                  style: TextStyle(fontSize: 15),
+                                ),
+                                Text(
+                                  "30",
+                                  style: TextStyle(fontSize: 15),
+                                )
                               ],
                             ),
-                            Chip(label: Text("In Progress"),backgroundColor: Colors.yellow,)
+                            Chip(
+                              label: Text("In Progress"),
+                              backgroundColor: Colors.yellow,
+                            )
                           ],
                         ),
-                      )
-                  ),
+                      )),
                   SizedBox(
                     width: 10,
                   ),
@@ -669,10 +718,7 @@ class _HomePage3State extends State<HomePage3> with TickerProviderStateMixin{
                           decoration: BoxDecoration(
                               color: ColorConstant.bgDark,
                               borderRadius: BorderRadius.circular(20),
-                              border: Border.all(
-                                  color: Colors.black
-                              )
-                          ),
+                              border: Border.all(color: Colors.black)),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceAround,
                             children: [
@@ -701,20 +747,19 @@ class _HomePage3State extends State<HomePage3> with TickerProviderStateMixin{
                                       fit: BoxFit.fitHeight),
                                 ),
                               ),
-                              Text("Papers Published",textAlign: TextAlign.start,)
+                              Text(
+                                "Papers Published",
+                                textAlign: TextAlign.start,
+                              )
                             ],
-                          )
-                      ),
+                          )),
                       back: Container(
                         height: 70,
                         width: 270,
                         decoration: BoxDecoration(
                             color: ColorConstant.bgDark,
                             borderRadius: BorderRadius.circular(20),
-                            border: Border.all(
-                                color: Colors.black
-                            )
-                        ),
+                            border: Border.all(color: Colors.black)),
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           crossAxisAlignment: CrossAxisAlignment.center,
@@ -723,15 +768,23 @@ class _HomePage3State extends State<HomePage3> with TickerProviderStateMixin{
                               mainAxisAlignment: MainAxisAlignment.center,
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
-                                Text("Journal Papers Published : ",style:TextStyle(fontSize: 15) ,),
-                                Text("30",style: TextStyle(fontSize: 15),)
+                                Text(
+                                  "Journal Papers Published : ",
+                                  style: TextStyle(fontSize: 15),
+                                ),
+                                Text(
+                                  "30",
+                                  style: TextStyle(fontSize: 15),
+                                )
                               ],
                             ),
-                            Chip(label: Text("In Progress"),backgroundColor: Colors.yellow,)
+                            Chip(
+                              label: Text("In Progress"),
+                              backgroundColor: Colors.yellow,
+                            )
                           ],
                         ),
-                      )
-                  ),
+                      )),
                 ],
               ),
             ],
