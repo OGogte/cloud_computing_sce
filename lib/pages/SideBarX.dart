@@ -3,6 +3,8 @@ import 'package:insighttrack/utils/size_utils.dart';
 import 'package:sidebarx/sidebarx.dart';
 import 'package:flutter/material.dart';
 
+import 'home_page_final.dart';
+
 class HomePage2 extends StatefulWidget {
   const HomePage2({Key? key}) : super(key: key);
 
@@ -41,9 +43,7 @@ class _HomePage2State extends State<HomePage2> {
                       builder: (context,child){
                         switch(_controller.selectedIndex){
                           case 0: _key.currentState?.closeDrawer();
-                          return Center(
-                            child: Text('Home',style: TextStyle(color: Colors.black,fontSize: 40),),
-                          );
+                          return HomePage3();
                           case 1: _key.currentState?.closeDrawer();
                           return Center(
                             child: Text('Search',style: TextStyle(color: Colors.white,fontSize: 40),),
@@ -57,9 +57,9 @@ class _HomePage2State extends State<HomePage2> {
                             child: Text('Theme',style: TextStyle(color: Colors.white,fontSize: 40),),
                           );
                           default:
-                            return Center(
+                            return HomePage3();/*Center(
                               child: Text('Home',style: TextStyle(color: Colors.white,fontSize: 40),),
-                            );
+                            );*/
                         }
                       },
                     ),))
@@ -82,7 +82,7 @@ class SideBarXExample extends StatelessWidget {
       theme:  const SidebarXTheme(
         decoration: BoxDecoration(
             color: canvasColor,
-            borderRadius: BorderRadius.only(topRight: Radius.circular(20),bottomRight: Radius.circular(20))
+            //borderRadius: BorderRadius.only(topRight: Radius.circular(20),bottomRight: Radius.circular(20))
         ),
         iconTheme: IconThemeData(
           color: Colors.white,
