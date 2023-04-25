@@ -1,7 +1,10 @@
+import 'package:insighttrack/pages/anlaytics_page.dart';
+import 'package:insighttrack/pages/kpi_page.dart';
 import 'package:insighttrack/utils/image_constant.dart';
 import 'package:insighttrack/utils/size_utils.dart';
 import 'package:sidebarx/sidebarx.dart';
 import 'package:flutter/material.dart';
+import 'package:insighttrack/pages/profile_page.dart';
 
 import 'home_page_final.dart';
 
@@ -45,17 +48,13 @@ class _HomePage2State extends State<HomePage2> {
                           case 0: _key.currentState?.closeDrawer();
                           return HomePage3();
                           case 1: _key.currentState?.closeDrawer();
-                          return Center(
-                            child: Text('Search',style: TextStyle(color: Colors.white,fontSize: 40),),
-                          );
+                          return AnalyticsPage();
                           case 2: _key.currentState?.closeDrawer();
-                          return Center(
-                            child: Text('Settings',style: TextStyle(color: Colors.white,fontSize: 40),),
-                          );
+                          return KPI_PAGE();/*Center(
+                            child: Text('Settings',style: TextStyle(color: Colors.black,fontSize: 40),),
+                          );*/
                           case 3: _key.currentState?.closeDrawer();
-                          return Center(
-                            child: Text('Theme',style: TextStyle(color: Colors.white,fontSize: 40),),
-                          );
+                          return ProfilePage();
                           default:
                             return HomePage3();/*Center(
                               child: Text('Home',style: TextStyle(color: Colors.white,fontSize: 40),),
