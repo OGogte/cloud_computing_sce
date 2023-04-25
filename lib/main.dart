@@ -1,5 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:insighttrack/pages/SideBarX.dart';
+import 'package:insighttrack/pages/home_page.dart';
 import 'package:insighttrack/pages/login_screen.dart';
 import 'package:insighttrack/pages/new_page.dart';
 import 'pages/journal_paper_data.dart';
@@ -37,7 +39,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: JournalPaper()
+      home: HomePage2()/*JournalPaper()*/
     );
   }
 }

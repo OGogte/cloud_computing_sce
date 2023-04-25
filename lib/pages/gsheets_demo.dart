@@ -166,8 +166,16 @@ void main() async {
       print(faculty_data.runtimeType);
     }*/
   Papers papers = await Papers().fetchJournalPaperData(7);
-  print(Papers().fetchJournalPaperData(7));
-  print(papers.t);
-  print(papers.type);
+  Papers papers2 = await Papers().fetchConferencePaperData(7);
+  print(Papers().fetchJournalPaperData(7)); //Text()
+  print(await Papers().fetchConferencePaperData(7));
+  print(papers2.t);
+  print(papers2.a);
+  print(papers2.type);
+  Citations cit = await Citations().fetchWoSCitationData(7);
+  print(cit.t);
+  print(cit.e);
+  print(cit.a);
+  print(cit.type);
 
 }
