@@ -29,7 +29,7 @@ class _CustomFormState extends State<CustomForm> {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Text(
-            "Enter your login details",
+            "Login details",
             style: TextStyle(
               fontFamily: "Poppins",
               fontWeight: FontWeight.w600,
